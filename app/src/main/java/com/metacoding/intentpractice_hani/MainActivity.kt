@@ -3,9 +3,14 @@ package com.metacoding.intentpractice_hani
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_edit.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    //멤버 변수 만들기
+    val REQUEST_FOR_NICKNAME = 1005
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -31,6 +36,11 @@ class MainActivity : AppCompatActivity() {
             val myIntent = Intent(this,OtherActivity::class.java)
             startActivity(myIntent)
 
+        }
+        editNicknameBtn.setOnClickListener {
+
+            val myIntent = Intent(this,EditActivity::class.java)
+            startActivityForResult(myIntent,REQUEST_FOR_NICKNAME)
         }
     }
 }
