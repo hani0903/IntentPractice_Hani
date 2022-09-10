@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         editNicknameBtn.setOnClickListener {
 
             val myIntent = Intent(this,EditActivity::class.java)
+            //이건 왕복과 같다. 따라서 다음 화면에서 돌아올 때에는 Intent()안에 뭘 써줄 필요 X
             startActivityForResult(myIntent,REQUEST_FOR_NICKNAME)
         }
     }
